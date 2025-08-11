@@ -1,0 +1,25 @@
+@startuml class-diagram
+
+class Project {
+- id: string
+- name: string
+- tasks: Task[]
+}
+
+enum TaskStatus {
+pending,
+in_progress,
+completed
+}
+
+class Task {
+- id: string
+- title: string
+- status: TaskStatus
+- dueDate: Date
++ markCompleted: void
+}
+
+Project "1" *-- "0..*" Task: contains
+
+@enduml
