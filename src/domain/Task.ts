@@ -3,6 +3,6 @@ export class Task {
     public id: string,
     public title: string,
     public status: string,
-    public dueDate: Date
+    public dueDate: Date,
   ) {}
 }
