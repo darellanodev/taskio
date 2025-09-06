@@ -1,9 +1,24 @@
 @startuml class-diagram
 
+class User {
+  - id: string
+  - name: string
+  - project: Project[]
+  - achievements: Achievement[]
+}
+
+class Achievement {
+  - id: string
+  - name: string
+  - description: string
+  - unlockedAt: Date
+}
+
 class Project {
 - id: string
 - name: string
 - tasks: Task[]
+- progress: number
 }
 
 enum TaskStatus {
@@ -21,5 +36,7 @@ class Task {
 }
 
 Project "1" *-- "0..*" Task: contains
+User "1" *-- "0..*" Project: manages
+User "1" *-- "0..*" Achievement: unlock
 
 @enduml
