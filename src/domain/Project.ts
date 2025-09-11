@@ -8,4 +8,7 @@ export class Project {
   addTask(task: Task) {
     this.tasks.push(task)
   }
+  calculateProgress() {
+    return 0
+  }
 }
