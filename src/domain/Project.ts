@@ -8,4 +8,14 @@ export class Project {
   addTask(task: Task) {
     this.tasks.push(task)
   }
+  calculateProgress() {
+    const total = this.tasks.length
+    if (total === 0) return 0
+    const completed = this.countCompletedTasks()
+    return completed / total
+  }
+
+  private countCompletedTasks(): number {
+    return this.tasks.filter((task) => task.status === 'completed').length
+  }
 }
