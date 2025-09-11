@@ -9,10 +9,11 @@ export class Project {
     this.tasks.push(task)
   }
   calculateProgress() {
-    if (this.tasks.length === 0) return 0
+    const total = this.tasks.length
+    if (total === 0) return 0
     const completed = this.tasks.filter(
       (task) => task.status === 'completed',
     ).length
-    return completed / this.tasks.length
+    return completed / total
   }
 }
