@@ -10,4 +10,9 @@ describe('Progress', () => {
     expect(() => new Progress(1.1)).toThrow()
     expect(() => new Progress(-1)).toThrow()
   })
+  it('should consider two Progress with the same value as equal', () => {
+    const p1 = new Progress(0.4)
+    const p2 = new Progress(0.4)
+    expect(p1.equals(p2)).toBe(true)
+  })
 })

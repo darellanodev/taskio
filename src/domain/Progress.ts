@@ -6,4 +6,7 @@ export class Progress {
     }
     this.value = value
   }
+  equals(otherProgress: Progress): boolean {
+    return this.value === otherProgress.value
+  }
 }
