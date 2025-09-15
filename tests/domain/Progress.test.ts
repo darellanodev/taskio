@@ -22,4 +22,11 @@ describe('Progress', () => {
     expect(zeroProgress.value).toBe(0)
     expect(fullProgress.value).toBe(1)
   })
+  it('should know when Progress is completed or not', () => {
+    const progressCompleted = new Progress(1)
+    const progressNotCompleted = new Progress(0.5)
+
+    expect(progressCompleted.isCompleted()).toBe(true)
+    expect(progressNotCompleted.isCompleted()).toBe(false)
+  })
 })

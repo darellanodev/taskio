@@ -9,4 +9,7 @@ export class Progress {
   equals(otherProgress: Progress): boolean {
     return this.value === otherProgress.value
   }
+  isCompleted(): boolean {
+    return this.value === 1
+  }
 }
