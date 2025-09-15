@@ -6,4 +6,8 @@ describe('Progress', () => {
     const progress = new Progress(0.5)
     expect(progress.value).toBe(0.5)
   })
+  it('should throw if value is less than 0 or greater than 1', () => {
+    expect(() => new Progress(1.1)).toThrow()
+    expect(() => new Progress(-1)).toThrow()
+  })
 })
