@@ -29,4 +29,8 @@ describe('Progress', () => {
     expect(progressCompleted.isCompleted()).toBe(true)
     expect(progressNotCompleted.isCompleted()).toBe(false)
   })
+  it('should calculate the progress correctly', () => {
+    const p1 = new Progress(0.5)
+    expect(p1.percentage()).toBe(50)
+  })
 })

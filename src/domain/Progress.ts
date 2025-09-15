@@ -12,4 +12,7 @@ export class Progress {
   isCompleted(): boolean {
     return this.value === 1
   }
+  percentage(): number {
+    return this.value * 100
+  }
 }
