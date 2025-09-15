@@ -15,4 +15,11 @@ describe('Progress', () => {
     const p2 = new Progress(0.4)
     expect(p1.equals(p2)).toBe(true)
   })
+  it('should allow Progress values exactly 0 and 1', () => {
+    const zeroProgress = new Progress(0)
+    const fullProgress = new Progress(1)
+
+    expect(zeroProgress.value).toBe(0)
+    expect(fullProgress.value).toBe(1)
+  })
 })
