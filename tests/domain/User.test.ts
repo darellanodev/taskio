@@ -35,4 +35,17 @@ describe('User achievements', () => {
     expect(user.achievements[0].id).toBe('a1')
     expect(user.achievements[0].unlockedAt).toBeInstanceOf(Date)
   })
+  it('should not allow to unlock the same achievement twice', () => {
+    const user = new User('u1', 'Alice')
+    const achievement = new Achievement(
+      'a1',
+      'First project',
+      'Create the first project',
+    )
+
+    user.unlockAchievement(achievement)
+    user.unlockAchievement(achievement)
+
+    expect(user.achievements).toHaveLength(1)
+  })
 })

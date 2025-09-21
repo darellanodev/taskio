@@ -19,6 +19,12 @@ export class User {
   }
 
   unlockAchievement(achievement: Achievement) {
+    const achievementAlreadyUnlocked = this.achievements.some(
+      (a) => a.id === achievement.id,
+    )
+    if (achievementAlreadyUnlocked) {
+      return
+    }
     achievement.markUnlocked()
     this.achievements.push(achievement)
   }
