@@ -5,6 +5,7 @@ class User {
   - name: string
   - projects: Project[]
   - achievements: Achievement[]
+  + addProject(): void
 }
 
 class Achievement {
