@@ -5,6 +5,8 @@ class User {
   - name: string
   - projects: Project[]
   - achievements: Achievement[]
+  + addProject(): void
+  + unlockAchievement(): void
 }
 
 class Achievement {
@@ -12,6 +14,7 @@ class Achievement {
   - name: string
   - description: string
   - unlockedAt: Date
+  + markUnlocked(): void
 }
 
 class Project {
